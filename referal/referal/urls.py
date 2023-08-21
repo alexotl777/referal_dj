@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from authentication.views import *
-
+from sms_code.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', authAPI.as_view())
+    path('', authAPI.as_view()),
+    path('code' , sms_code.as_view()),
 ]

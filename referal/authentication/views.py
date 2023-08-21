@@ -1,6 +1,5 @@
 from django.forms import GenericIPAddressField
 from django.shortcuts import render
-#from rest_framework import generics
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponsePermanentRedirect, JsonResponse
 from django.views.generic import TemplateView
 from authentication.models import authentication
