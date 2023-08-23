@@ -7,19 +7,17 @@
 </head>
 <div class="login-box">
     <h2>Login</h2>
-    <form>
+    <form method="POST" action="{% url 'code' %}">
+      {% csrf_token %}
       <span></span>
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="num" required="">
         <label>Phone</label>
+        <p class="wrong">{{format}}</p>
       </div>
-      <a href="code">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Submit
-      </a>
+      <button type="submit">
+        SEND CODE
+      </button>
     </form>
   </div>
 </html>

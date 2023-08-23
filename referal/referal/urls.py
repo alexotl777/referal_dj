@@ -22,5 +22,5 @@ from sms_code.views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', authAPI.as_view()),
-    path('code' , sms_code.as_view()),
+    path('code', authAPI.code, name='code'),
 ]
