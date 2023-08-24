@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\alexo\OneDrive\Рабочий стол\test_task\venv
+set VIRTUAL_ENV=C:\Users\alexo\OneDrive\Рабочий стол\test_task\referal_dj\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

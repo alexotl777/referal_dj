@@ -6,4 +6,4 @@ from .models import authentication
 class WomenSerializer(Serializer.ModelSerializer):
     class Meta:
         model = authentication
-        fields = ('title')
+        fields = ('phone')

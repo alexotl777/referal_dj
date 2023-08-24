@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "authentication.apps.AuthenticationConfig",
     "sms_code.apps.SmsCodeConfig",
+    "MyProfile.apps.MyprofileConfig",
 ]
 
 MIDDLEWARE = [
