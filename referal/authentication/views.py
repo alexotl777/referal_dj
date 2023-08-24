@@ -4,6 +4,8 @@ from django.http import HttpResponse, HttpResponseNotFound, HttpResponsePermanen
 from django.views.generic import TemplateView
 from authentication.models import authentication
 # Create your views here.
+import random
+import string
 import time
 
 class authAPI(TemplateView):
@@ -16,17 +18,22 @@ class authAPI(TemplateView):
             # Выполнить необходимые действия с полученным значением
             # Записать данные в переменную или выполнить другую логику
             # ...
-            print(phone_num)
+            
             if len(phone_num) == 12 and phone_num[0] == '+' or len(phone_num) == 11 and phone_num[0] != '+':
                 if phone_num[0] != '+':
                     phone_num = '+7' + phone_num[1:]
                 try:
                     registration = authentication.objects.get(phone=phone_num)
                 except authentication.DoesNotExist:
-                    data = authentication(phone = phone_num)
+                    # задаем набор символов для генерации кода
+                    characters = string.ascii_uppercase + string.digits + string.ascii_lowercase
+
+                    # генерируем случайный 6-значный код
+                    code_rnd = ''.join(random.choice(characters) for i in range(6))
+                    data = authentication(phone = phone_num, invite=code_rnd)
                     data.save()
             else:
                 return render(request, 'referal.html', {'format': 'Wrong format'})
-            print(authentication.objects.all()[0], type(authentication.objects.all()[0]), type(phone_num))
+            
             time.sleep(2)
         return render(request, 'code.html')

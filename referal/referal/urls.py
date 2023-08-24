@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from authentication.views import *
 from sms_code.views import *
+from MyProfile.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', authAPI.as_view()),
-    path('code', authAPI.code, name='code'),
+    path('code/', authAPI.code, name='code'),
+    path('user_profile/', viewProfile.as_view(), name='user_profile'),
 ]
