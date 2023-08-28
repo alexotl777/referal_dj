@@ -7,3 +7,5 @@ from django.views.generic import TemplateView
 
 class viewProfile(TemplateView):
     template_name = "prof.html"
+    def apply(request):
+        print('hi')

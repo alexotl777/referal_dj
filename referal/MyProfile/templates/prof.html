@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/styles_prof.css">
+    <script>
+      k = 0
+      function handleGet(){
+        
+        const loadBox = document.getElementById('namer')
+        k += 1
+        if(k==1){
+          loadBox.innerHTML += '<div><input type="text" name="" placeholder="Code"></div><button type="submit">OK</button></div>'
+        }
+      }
+    </script>
     <title>Referal</title>
 </head>
 
 <div class="card-container">
-    <span class="pro">PRO</span>
+    <span class="pro">Test</span>
     <img class="round" src="https://pp.userapi.com/c639718/v639718128/f970/qJHTgDwBlZ4.jpg" alt="user" width="70%" height="270px"/>
     <h3>Username</h3>
     <h6>Phone</h6>
     <p>User discription<br/> here</p>
     <div class="buttons">
-      <button class="primary">
-        Invite code
+      <button class="primary" id="load-invite" onclick="handleGet()">
+          Invite code
       </button>
       <button class="primary ghost">
         Get phones
       </button>
+      <form action="{% url 'apply' %}">
+        <div id="namer">
+        </div>
+      </form>
+      
     </div>
     <div class="skills">
       <h6>Skills</h6>
