@@ -8,16 +8,14 @@ import random
 import string
 import time
 
-class authAPI(TemplateView):
+class AuthAPI(TemplateView):
     template_name = 'referal.html'
     queryset = authentication.objects.all()
     
     def code(request):
         if request.method == 'POST':
+
             phone_num = request.POST.get('num')
-            # Выполнить необходимые действия с полученным значением
-            # Записать данные в переменную или выполнить другую логику
-            # ...
             
             if len(phone_num) == 12 and phone_num[0] == '+' or len(phone_num) == 11 and phone_num[0] != '+':
                 if phone_num[0] != '+':

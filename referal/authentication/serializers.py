@@ -3,7 +3,7 @@ from itsdangerous import Serializer
 from .models import authentication
  
  
-class WomenSerializer(Serializer.ModelSerializer):
+class PhoneSerializer(Serializer.ModelSerializer):
     class Meta:
         model = authentication
         fields = ('phone')

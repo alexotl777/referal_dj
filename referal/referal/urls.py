@@ -22,8 +22,9 @@ from MyProfile.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', authAPI.as_view()),
-    path('code/', authAPI.code, name='code'),
-    path('user_profile/', viewProfile.as_view(), name='user_profile'),
-    path('user_profile/', viewProfile.apply, name='apply'),
+    path('', AuthAPI.as_view()),
+    path('code/', AuthAPI.code, name='code'),
+    path('user_profile/', ViewProfile.as_view(), name='user_profile'),
+    path('user_profile/', ViewProfile.apply, name='apply'),
+    path('api/phones/', Phones.getter, name='phones'),
 ]

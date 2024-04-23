@@ -27,9 +27,16 @@
       <button class="primary" id="load-invite" onclick="handleGet()">
           Invite code
       </button>
-      <button class="primary ghost">
+      <form method="POST" action="{% url 'phones' %}">
+        {% csrf_token %}
+        </div>
+        <button class="primary ghost">
+          Get phones
+        </button>
+      </form>
+      <!-- <button class="primary ghost">
         Get phones
-      </button>
+      </button> -->
       <form action="{% url 'apply' %}">
         <div id="namer">
         </div>
